@@ -2,23 +2,28 @@ import { useState } from "react";
 import viteLogo from "/vite.svg";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import CourseMatcher from "./Pages/CourseMatcher";
-import Courses from "./Pages/Courses";
-import Home from "./Pages/Home";
-import Contact from "./Pages/Contact";
+import Sidebar, { SidebarItem } from "./Components/Sidebar/Sidebar";
+import Devices from "./Pages/Devices";
+import Statistics from "./Pages/Statistics";
+import Dashboard from "./Pages/Dashboard";
+import Notifications from "./Pages/Notifications";
+import Users from "./Pages/Users";
+import Settings from "./Pages/Settings";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
+    // <Sidebar />
     <Router>
-      <Navbar />
+      <Sidebar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Courses" element={<Courses />} />
-        <Route path="/CourseMatcher" element={<CourseMatcher />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/Statistics" element={<Statistics />} />
+        <Route path="/Devices" element={<Devices />} />
+        <Route path="/Notifications" element={<Notifications />} />
+        <Route path="/Settings" element={<Settings />} />
+        <Route path="/Users" element={<Users />} />
       </Routes>
     </Router>
   );
